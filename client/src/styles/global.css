@@ -57,7 +57,7 @@ img {
 /* -------- Profile ---------- */
 @import url("./profile.css");
 
-/* -------- Home ---------- */
+/* -------- Home1 ---------- */
 @import url("./home.css");
 
 /* -------- Status Modal ---------- */
@@ -78,8 +78,9 @@ img {
 /* -------- Call Modal---------- */
 @import url("./call_modal.css");
 
-
-
+@import url("./ProfileSide.css");
+@import url("./LogoSearch.css");
+@import url("./ProfileCard.css");
 /* --------- Responsive ------ */
 @media (max-width: 766px){
   .header .navbar .logo{

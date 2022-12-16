@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import PageRender from './customRouter/PageRender'
 import PrivateRouter from './customRouter/PrivateRouter'
 
-import Home from './pages/home'
+import Home1 from './pages/home1'
 import Login from './pages/login'
 import Register from './pages/register'
 
@@ -24,6 +24,7 @@ import SocketClient from './SocketClient'
 import { getNotifies } from './redux/actions/notifyAction'
 import CallModal from './components/message/CallModal'
 import Peer from 'peerjs'
+import Home from "./pages/home";
 
 function App() {
   const { auth, status, modal, call } = useSelector(state => state)
@@ -75,7 +76,7 @@ function App() {
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
         <div className="main">
-          {auth.token && <Header />}
+          {/*{auth.token && <Header />}*/}
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}
