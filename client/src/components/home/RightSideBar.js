@@ -5,6 +5,7 @@ import UserCard from '../UserCard'
 import FollowBtn from '../FollowBtn'
 import LoadIcon from '../../images/loading.gif'
 import { getSuggestions } from '../../redux/actions/suggestionsAction'
+import {AiOutlineReload} from "react-icons/all";
 
 const RightSideBar = () => {
     const { auth, suggestions } = useSelector(state => state)
@@ -18,8 +19,8 @@ const RightSideBar = () => {
                 <h5 className="text-danger">Suggestions for you</h5>
                 {
                     !suggestions.loading &&
-                    <i className="fas fa-redo" style={{cursor: 'pointer'}}
-                    onClick={ () => dispatch(getSuggestions(auth.token)) } />
+                   <AiOutlineReload  onClick={ () => dispatch(getSuggestions(auth.token)) }  />
+
                 }
             </div>
 

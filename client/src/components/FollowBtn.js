@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { follow, unfollow } from '../redux/actions/profileAction'
-
+import './FollowersCard/FollowersCard.css'
 const FollowBtn = ({user}) => {
     const [followed, setFollowed] = useState(false)
 
@@ -39,11 +39,11 @@ const FollowBtn = ({user}) => {
         <>
         {
             followed
-            ? <button className="btn btn-outline-danger"
+            ? <button className="button fc-button UnfollowButton"
             onClick={handleUnFollow}>
                 UnFollow
             </button>
-            : <button className="btn btn-outline-info"
+            : <button className="button fc-button"
             onClick={handleFollow}>
                 Follow
             </button>

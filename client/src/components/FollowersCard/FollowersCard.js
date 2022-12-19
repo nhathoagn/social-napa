@@ -1,34 +1,51 @@
 import React, { useEffect, useState } from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {getDataAPI} from "../../utils/fetchData";
+import RightSideBar from "../home/RightSideBar";
+import UserCard from "../UserCard";
+import {getSuggestions} from "../../redux/actions/suggestionsAction";
+import LoadIcon from "../../images/loading.gif";
+import FollowBtn from "../FollowBtn";
+import './FollowersCard.css'
+import {AiOutlineReload} from "react-icons/all";
 import FollowersModal from "../FollowersModal/FollowersModal";
-import { getAllUser } from "../../api/UserRequests";
-import User from "../User/User";
-import { useSelector } from "react-redux";
 const FollowersCard = ({ location }) => {
+    const { auth, suggestions } = useSelector(state => state)
+    const dispatch = useDispatch()
     const [modalOpened, setModalOpened] = useState(false);
-    const [persons, setPersons] = useState([]);
-    const { user } = useSelector((state) => state.authReducer.authData);
-
-    useEffect(() => {
-        const fetchPersons = async () => {
-            const { data } = await getAllUser();
-            setPersons(data);
-        };
-        fetchPersons();
-    }, []);
 
     return (
         <div className="FollowersCard">
-            <h3>People you may know</h3>
+            <h3>People you may know {
+                !suggestions.loading &&
+                <AiOutlineReload onClick={ () => dispatch(getSuggestions(auth.token)) }  />
 
-            {persons.map((person, id) => {
-                if (person._id !== user._id) return <User person={person} key={id} />;
-            })}
+            }</h3>
+
+
+
+            {
+                suggestions.loading
+                    ? <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />
+                    : <div className="suggestions">
+                        {
+                            suggestions.users.map( (user,index) => {
+                                if (index < 3){
+                                 return  <UserCard key={user._id} user={user} >
+                                     <FollowBtn user={user} />
+                                 </UserCard>
+                                }
+                            })
+                        }
+                    </div>
+            }
             {!location ? (
-                <span onClick={() => setModalOpened(true)}>Show more</span>
+                <span onClick={() => {
+                    setModalOpened(true)
+                }}>Show more</span>
             ) : (
                 ""
             )}
-
             <FollowersModal
                 modalOpened={modalOpened}
                 setModalOpened={setModalOpened}

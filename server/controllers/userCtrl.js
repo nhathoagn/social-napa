@@ -22,6 +22,18 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    getAllUsers: async (req, res) => {
+        try {
+            let users = await Users.find();
+            users = users.map((user)=>{
+                const {password, ...otherDetails} = user._doc
+                return otherDetails
+            })
+            res.status(200).json(users);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
     updateUser: async (req, res) => {
         try {
             const { avatar, fullname, mobile, address, story, website, gender } = req.body

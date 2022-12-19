@@ -1,12 +1,10 @@
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-
+import './ProfileCard.css'
 const ProfileCard = () => {
     const {user} = useSelector(state => state.auth)
-    console.log(user)
     const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
     const posts = useSelector(state => state.homePosts)
-    console.log("posts",posts)
   return (
       <div className="ProfileCard">
           <div className="ProfileImages">
@@ -42,30 +40,30 @@ const ProfileCard = () => {
                       <span>Following</span>
                   </div>
                   {/* for profilepage */}
-                  {location === "profilePage" && (
-                      <>
-                          <div className="vl"></div>
-                          <div className="follow">
-                <span>{
-                    posts.filter((post)=>post.userId === user._id).length
-                }</span>
-                              <span>Posts</span>
-                          </div>{" "}
-                      </>
-                  )}
+                {/*  {location === "profilePage" && (*/}
+                {/*      <>*/}
+                {/*          <div className="vl"></div>*/}
+                {/*          <div className="follow">*/}
+                {/*<span>{*/}
+                {/*    posts.filter((post)=>post.userId === user._id).length*/}
+                {/*}</span>*/}
+                {/*              <span>Posts</span>*/}
+                {/*          </div>{" "}*/}
+                {/*      </>*/}
+                {/*  )}*/}
               </div>
               <hr />
           </div>
 
-          {location === "profilePage" ? (
-              ""
-          ) : (
-              <span>
-          <Link to={`/profile/${user._id}`} style={{ textDecoration: "none", color: "inherit" }}>
-            My Profile
-          </Link>
-        </span>
-          )}
+        {/*  {location === "profilePage" ? (*/}
+        {/*      ""*/}
+        {/*  ) : (*/}
+        {/*      <span>*/}
+        {/*  <Link to={`/profile/${user._id}`} style={{ textDecoration: "none", color: "inherit" }}>*/}
+        {/*    My Profile*/}
+        {/*  </Link>*/}
+        {/*</span>*/}
+        {/*  )}*/}
       </div>
   );
 };

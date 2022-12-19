@@ -16,7 +16,7 @@ const UserCard = ({children, user, border, handleClose, setShowFollowers, setSho
     const showMsg = (user) => {
         return(
             <>
-                <div style={{filter: theme ? 'invert(1)' : 'invert(0)'}}>
+                <div>
                     {user.text}
                 </div>
                 {
