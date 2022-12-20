@@ -22,7 +22,7 @@
     align-items: center;
     border-bottom: 1px solid #ddd;
     transform: translateY(-13px);
-} 
+}
 .status_header span{
     font-size: 2rem;
     font-weight: 900;
@@ -105,4 +105,8 @@
 }
 .status_body .dropdown-menu{
     transform: translate3d(-153px, -190px, 0px) !important;
+}
+.status_footer .btn-background{
+    color: white;
+    background: var(--buttonBg);
 }

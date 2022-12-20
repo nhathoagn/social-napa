@@ -47,7 +47,7 @@ const ProfileCard = () => {
                 {/*<span>{*/}
                 {/*    posts.filter((post)=>post.userId === user._id).length*/}
                 {/*}</span>*/}
-                {/*              <span>Posts</span>*/}
+                {/*              <span>Postssssss</span>*/}
                 {/*          </div>{" "}*/}
                 {/*      </>*/}
                 {/*  )}*/}

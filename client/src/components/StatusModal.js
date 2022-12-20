@@ -189,7 +189,7 @@ const StatusModal = () => {
                 </div>
 
                 <div className="status_footer">
-                    <button className="btn btn-secondary w-100" type="submit">
+                    <button className="btn btn-background w-100" type="submit">
                         Post
                     </button>
                 </div>

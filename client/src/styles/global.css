@@ -1,3 +1,45 @@
+
+/* -------- AUTH ---------- */
+/*@import url("./auth.css");*/
+
+/* -------- LOADING ---------- */
+@import url("./loading.css");
+
+/* -------- Header ---------- */
+@import url("./header.css");
+
+/* -------- Avatar ---------- */
+/*@import url("./avatar.css");*/
+
+/*!* -------- Header ---------- *!*/
+/*@import url("./header.css");*/
+
+/* -------- Profile ---------- */
+/*@import url("./profile.css");*/
+
+/* -------- Home ---------- */
+@import url("./home.css");
+
+/* -------- Status Modal ---------- */
+@import url("./status_modal.css");
+
+/* -------- Comments ---------- */
+@import url("./comments.css");
+
+/* -------- Post Thumb ---------- */
+@import url("./post_thumb.css");
+
+/* -------- Message---------- */
+/*@import url("./message.css");*/
+
+/*!* -------- Icons---------- *!*/
+@import url("./icons.css");
+
+/*!* -------- Call Modal---------- *!*/
+/*@import url("./call_modal.css");*/
+
+
+
 :root {
   --yellow: #f5c32c;
   --orange: #fca61f;
@@ -91,95 +133,9 @@
   height: 2rem;
   align-self: flex-end;
 }
-
-img {
-  object-fit: cover;
+ .Home {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18rem auto 20rem;
+  gap: 1rem;
 }
-
-/*!* -------- AUTH ---------- *!*/
-/*@import url("./auth.css");*/
-
-/*!* -------- LOADING ---------- *!*/
-/*@import url("./loading.css");*/
-
-/*!* -------- Header ---------- *!*/
-/*@import url("./header.css");*/
-
-/*!* -------- Avatar ---------- *!*/
-/*@import url("./avatar.css");*/
-
-/*!* -------- Header ---------- *!*/
-/*@import url("./header.css");*/
-
-/*!* -------- Profile ---------- *!*/
-/*@import url("./profile.css");*/
-
-/*!* -------- Home1 ---------- *!*/
-/*@import url("./home.css");*/
-
-/*!* -------- Status Modal ---------- *!*/
-/*@import url("./status_modal.css");*/
-
-/*!* -------- Comments ---------- *!*/
-/*@import url("./comments.css");*/
-
-/*!* -------- Post Thumb ---------- *!*/
-/*@import url("./post_thumb.css");*/
-
-/*!* -------- Message---------- *!*/
-/*@import url("./message.css");*/
-
-/*!* -------- Icons---------- *!*/
-/*@import url("./icons.css");*/
-
-/*!* -------- Call Modal---------- *!*/
-/*@import url("./call_modal.css");*/
-
-/*@import url("../components/ProfileSide/ProfileSide.css");*/
-/*@import url("./LogoSearch.css");*/
-/*@import url("../components/ProfileCard/ProfileCard.css");*/
-/*!* --------- Responsive ------ *!*/
-@media (max-width: 766px){
-  .header .navbar .logo{
-    display: none;
-  }
-  .header .menu{
-      width: 100%;
-      height: 40px;
-  }
-  .header .menu .navbar-nav{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-  
-  .header .search_form{
-      width: 100%;
-  }
-  .header .logo{
-      margin: auto;
-  }
-  .header .logo h1{
-      font-size: 1.5rem;
-  }
-  
-  .message{
-    height: calc(100vh - 100px);
-  }
-  .right_mess,
-  .left_mess{
-    display: none;
-  }
-  .status{
-    padding: 20px 10px;
-  }
-}
-
-
-
-
-/*.mode{*/
-/*  width: 100%;*/
-/*  height: 100vh;*/
-/*  overflow: hidden;*/
-/*}*/
