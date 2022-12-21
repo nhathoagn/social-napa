@@ -10,11 +10,8 @@ const PostShare = () => {
     const dispatch = useDispatch();
     const { user } = useSelector((state) => state.auth);
     const  loading = useSelector(state => state.homePosts.loading)
-    console.log("loading", loading)
     const imageRef = useRef();
     const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
-    const  {status} = useSelector(state => state)
-    console.log("status",status)
     return(
         <div className="PostShare">
             <img

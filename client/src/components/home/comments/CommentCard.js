@@ -117,24 +117,24 @@ const CommentCard = ({children, comment, post, commentId}) => {
                             {moment(comment.createdAt).fromNow()}
                         </small>
 
-                        <small className="font-weight-bold mr-3">
+                        <small className="font-bold mr-3">
                             {comment.likes.length} likes
                         </small>
 
                         {
                             onEdit
                             ? <>
-                                <small className="font-weight-bold mr-3"
+                                <small className="font-bold mr-3"
                                 onClick={handleUpdate}>
                                     update
                                 </small>
-                                <small className="font-weight-bold mr-3"
+                                <small className="font-bold mr-3"
                                 onClick={() => setOnEdit(false)}>
                                     cancel
                                 </small>
                             </>
 
-                            : <small className="font-weight-bold mr-3"
+                            : <small className="font-bold mr-3"
                             onClick={handleReply}>
                                 {onReply ? 'cancel' :'reply'}
                             </small>
@@ -145,7 +145,7 @@ const CommentCard = ({children, comment, post, commentId}) => {
                 </div>
 
 
-                <div className="d-flex align-items-center mx-2" style={{cursor: 'pointer'}}>
+                <div className="flex items-center mx-2" style={{cursor: 'pointer'}}>
                     <CommentMenu post={post} comment={comment} setOnEdit={setOnEdit} />
                     <LikeButton isLike={isLike} handleLike={handleLike} handleUnLike={handleUnLike} />
                 </div>

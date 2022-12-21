@@ -6,6 +6,8 @@ import moment from 'moment'
 import { GLOBALTYPES } from '../../../redux/actions/globalTypes'
 import { deletePost } from '../../../redux/actions/postAction'
 import { BASE_URL } from '../../../utils/config'
+import {Dropdown} from "flowbite-react";
+import {AiOutlineEllipsis} from "react-icons/ai";
 
 const CardHeader = ({post}) => {
     const { auth, socket } = useSelector(state => state)
@@ -30,7 +32,7 @@ const CardHeader = ({post}) => {
 
     return (
         <div className="card_header">
-            <div className="d-flex">
+            <div className="flex">
                 <Avatar src={post.user.avatar} size="big-avatar" />
 
                 <div className="card_name">
@@ -46,27 +48,28 @@ const CardHeader = ({post}) => {
             </div>
 
             <div className="nav-item dropdown">
-                <span className="material-icons" id="moreLink" data-toggle="dropdown">
-                    more_horiz
-                </span>
+                <Dropdown   arrowIcon={false} inline={true} label={ <AiOutlineEllipsis/>}>
 
-                <div className="dropdown-menu">
-                    {
-                        auth.user._id === post.user._id &&
-                        <>
-                            <div className="dropdown-item" onClick={handleEditPost}>
-                                <span className="material-icons">create</span> Edit Post
-                            </div>
-                            <div className="dropdown-item" onClick={handleDeletePost} >
-                                <span className="material-icons">delete_outline</span> Remove Post
-                            </div>
-                        </>
-                    }
+                        {auth.user._id === post.user._id && (
+                            <>
+                                <Dropdown.Item>
+                                    <div className="dropdown-item" onClick={handleEditPost}>
+                                        <span className="material-icons">create</span> Edit Post
+                                    </div>
+                                </Dropdown.Item>
+                               <Dropdown.Item>
+                                   <div className="dropdown-item" onClick={handleDeletePost}>
+                                       <span className="material-icons">delete_outline</span> Remove
+                                       Post
+                                   </div>
+                               </Dropdown.Item>
+                            </>
+                        )}
 
-                    <div className="dropdown-item" onClick={handleCopyLink}>
+                    <Dropdown.Item>
                         <span className="material-icons">content_copy</span> Copy Link
-                    </div>
-                </div>
+                    </Dropdown.Item>
+                </Dropdown>
             </div>
         </div>
     )

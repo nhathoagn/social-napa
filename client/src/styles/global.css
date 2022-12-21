@@ -1,141 +1,486 @@
+@import '~flowbite';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+/*FollowersCard*/
 
-/* -------- AUTH ---------- */
-/*@import url("./auth.css");*/
+  .FollowersCard{
+    width: 100%;
+    border-radius: 0.7rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    max-height: 10rem;
+  }
 
-/* -------- LOADING ---------- */
-@import url("./loading.css");
+  .follower{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-/* -------- Header ---------- */
-@import url("./header.css");
-
-/* -------- Avatar ---------- */
-/*@import url("./avatar.css");*/
-
-/*!* -------- Header ---------- *!*/
-/*@import url("./header.css");*/
-
-/* -------- Profile ---------- */
-/*@import url("./profile.css");*/
-
-/* -------- Home ---------- */
-@import url("./home.css");
-
-/* -------- Status Modal ---------- */
-@import url("./status_modal.css");
-
-/* -------- Comments ---------- */
-@import url("./comments.css");
-
-/* -------- Post Thumb ---------- */
-@import url("./post_thumb.css");
-
-/* -------- Message---------- */
-/*@import url("./message.css");*/
-
-/*!* -------- Icons---------- *!*/
-@import url("./icons.css");
-
-/*!* -------- Call Modal---------- *!*/
-/*@import url("./call_modal.css");*/
+  .follower>div{
+    display: flex;
+    gap: 10px;
+  }
 
 
+  .followerImage{
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+  }
 
-:root {
-  --yellow: #f5c32c;
-  --orange: #fca61f;
-  --black: #242d49;
-  --gray: rgba(36, 45, 73, 0.65);
-  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
-  --hrColor: #cfcdcd;
-  --cardColor: rgba(255, 255, 255, 0.64);
-  --buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);
-  --inputColor: rgba(40, 52, 62, 0.07);
-  --photo: #4CB256;
-  --video: #4A4EB7;
-  --location: #EF5757;
-  --shedule: #E1AE4A;
+  .name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+
+
+
+
+  .fc-button{
+    height: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .UnfollowButton{
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    cursor: pointer;
+    background: transparent;
+  }
+
+
+  .FollowersCard>span{
+    font-weight: bold;
+    color: orange;
+    align-self: center;
+    cursor: pointer;
+  }
+/*LogoSearch*/
+  .LogoSearch {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .Search {
+    display: flex;
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .s-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(106.23deg, #f99827 0%, #f95f35 100%);
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
+  }
+/*Posts*/
+  .Posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+/*PostShare*/
+  .PostShare{
+    display: flex;
+    gap: 1rem;
+    background-color: var(--cardColor);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+
+
+
+
+
+
+
+  .postOptions{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .option{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .option:hover{
+    cursor: pointer;
+  }
+  .ps-button{
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+  }
+
+
+  .previewImage{
+    position: relative;
+     display: flex;
+  }
+
+
+/*PostSide*/
+  .PostSide
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    overflow: auto;;
+  }
+/* ProfileCard*/
+  .ProfileCard {
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+    overflow-x: clip;
+    background-color: var(--cardColor);
+  }
+
+  /* Profile Images */
+  .ProfileImages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ProfileImages > img:nth-of-type(1) {
+    width: 100%;
+  }
+  .ProfileImages > img:nth-of-type(2) {
+    width: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3rem;
+    box-shadow: var(--profileShadow);
+  }
+
+  /* Profile Name */
+  .ProfileName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 10px;
+  }
+
+
+
+  /* Follow Status */
+  .followStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+
+
+  .follow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .vl {
+    height: 70px;
+    border-left: 2px solid var(--hrColor);
+  }
+
+/*  ProfileSide*/
+  .ProfileSide{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    overflow: auto;
+  }
+/*  RightSide*/
+  .Home-RightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+
+  .home-navIcons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .home-navIcons>a>img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .home-navIcons>img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .home-navIcons>img:hover{
+    cursor: pointer;
+  }
+
+  .r-button{
+    height:3rem;
+    width: 80%;
+    align-self: center;
+  }
+/*  Home*/
+
+  .Home {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem auto 20rem;
+    gap: 1rem;
+  }
+
+
 }
 
-.App {
-  overflow: hidden;
-  color: var(--black);
-  background: #f3f3f3;
-  padding: 1rem 1rem;
+@layer utilities {
+  /*FollowersCard*/
+  .name>span:nth-of-type(1){
+    font-weight: bold;
+  }
+  .FollowersCard>span{
+    font-weight: bold;
+    color: orange;
+    align-self: center;
+    cursor: pointer;
+  }
+  /*LogoSearch*/
+  .Search>input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  /*PostShare*/
+  .PostShare>img{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+  .PostShare>div{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1rem;
+  }
+
+  .PostShare>div>input{
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+  }
+  .previewImage>svg{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    cursor: pointer;
+  }
+
+  .previewImage>img{
+    width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  /* Profile Images */
+  .ProfileImages > img:nth-of-type(1) {
+    width: 100%;
+  }
+  .ProfileImages > img:nth-of-type(2) {
+    width: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3rem;
+    box-shadow: var(--profileShadow);
+  }
+  .ProfileName > span:nth-of-type(1) {
+    font-weight: bold;
+  }
+  /* Follow Status */
+  .followStatus > hr {
+    width: 85%;
+    border: 1px solid var(--hrColor);
+  }
+
+  .followStatus > div {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .follow > span:nth-of-type(1) {
+    font-weight: bold;
+  }
+
+  .follow > span:nth-of-type(2) {
+    color: var(--gray);
+    font-size: 13px;
+  }
+  .ProfileCard>span
+  {
+    font-weight: bold;
+    color: orange;
+    align-self: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  /*  RightSide*/
+  .home-navIcons>a>img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .home-navIcons>img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .home-navIcons>img:hover{
+    cursor: pointer;
+  }
 }
+@layer base {
+  :root {
+    --yellow: #f5c32c;
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: rgba(36, 45, 73, 0.65);
+    --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+    --hrColor: #cfcdcd;
+    --cardColor: rgba(255, 255, 255, 0.64);
+    --buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);
+    --inputColor: rgba(40, 52, 62, 0.07);
+    --photo: #4CB256;
+    --video: #4A4EB7;
+    --location: #EF5757;
+    --shedule: #E1AE4A;
+  }
+  .App {
+    overflow: hidden;
+    color: var(--black);
+    background: #f3f3f3;
+    padding: 1rem 1rem;
+  }
+  .blur {
+    position: absolute;
+    width: 22rem;
+    height: 14rem;
+    border-radius: 50%;
+    background: #a6ddf0;
+    filter: blur(72px);
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--buttonBg);
+    transition: all 100ms ease-out;
+  }
+
+  .button:hover {
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    cursor: pointer;
+    background: transparent;
+  }
+  .button:disabled{
+    background: silver;
+    pointer-events: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .infoForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .infoInput{
+    border: none;
+    outline: none;
+    background-color: var(--inputColor);
+    border-radius: 8px;
+    padding: 20px;
+    flex:1;
+  }
+
+  .infoForm>div{
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+    width: 90%;
+  }
+
+  .infoButton{
+    width: 6rem;
+    height: 2rem;
+    align-self: flex-end;
+  }
+  h3{
+    font-size: 1.17rem;
+  }
+}
+
+
+
 
 /* blur */
-.blur {
-  position: absolute;
-  width: 22rem;
-  height: 14rem;
-  border-radius: 50%;
-  background: #a6ddf0;
-  filter: blur(72px);
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  background: var(--buttonBg);
-  transition: all 100ms ease-out;
-}
-
-.button:hover {
-  color: var(--orange);
-  border: 2px solid var(--orange);
-  cursor: pointer;
-  background: transparent;
-}
-
-.button:disabled{
-  background: silver;
-  pointer-events: none;
-}
 
 
-::-webkit-scrollbar {
-  display: none;
-}
+
+
+
+
+
+
+
+
 
 
 
 /* Form Styling */
-.infoForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.infoInput{
-  border: none;
-  outline: none;
-  background-color: var(--inputColor);
-  border-radius: 8px;
-  padding: 20px;
-  flex:1;
-}
-
-.infoForm>div{
-  display: flex;
-  gap: 1rem;
-  height: 2rem;
-  width: 90%;
-}
-
-.infoButton{
-  width: 6rem;
-  height: 2rem;
-  align-self: flex-end;
-}
- .Home {
-  position: relative;
-  display: grid;
-  grid-template-columns: 18rem auto 20rem;
-  gap: 1rem;
-}

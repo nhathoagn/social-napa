@@ -23,6 +23,8 @@
 /* ------------Postssssss ------ */
 .posts .card{
     box-shadow: 0 0 4px #ddd;
+    padding: 15px;
+    border-radius: 10px;
 }
 /* --------- Post Card Header --------- */
 .posts .card_header{

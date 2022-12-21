@@ -99,7 +99,7 @@ const CardFooter = ({post}) => {
                
             </div>
 
-            <div className="d-flex justify-content-between">
+            <div className="flex justify-between">
                 <h6 style={{padding: '0 25px', cursor: 'pointer'}}>
                     {post.likes.length} likes
                 </h6>

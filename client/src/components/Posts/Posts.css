@@ -1,15 +1,6 @@
-/*.Posts*/
-/*{*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 1rem;*/
-/*}*/
-.Post
+.Posts
 {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    background-color: var(--cardColor);
-    border-radius: 1rem;
     gap: 1rem;
 }
